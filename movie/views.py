@@ -5,5 +5,5 @@ from django.http import HttpResponse # Clase usada para construir respuestas HTT
 def home(request):
     #return HttpResponse('<h1>Welcome to Home Page</h1>')
     #return render(request, 'home.html') # Plantilla sin parámetros
-    return render(request, 'home.html', {'name':'Greg Lim'})
+    return render(request, 'home.html', {'name':'Ginna Alejandra'})
 
