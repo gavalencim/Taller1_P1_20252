@@ -7,3 +7,6 @@ def home(request):
     #return render(request, 'home.html') # Plantilla sin parámetros
     return render(request, 'home.html', {'name':'Ginna Alejandra'})
 
+def about(request):
+    return render(request, 'about.html')
+
