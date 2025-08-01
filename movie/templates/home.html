@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -20,18 +20,28 @@
         <![endif]-->
         <h1>Welcome to Home Page, {{name}}</h1>
         <h2>This is the full home page</h2>
-        <p>
-            <p>Searching for {{searchTerm}}</p>
-            {% for movie in movies %}
-                <h2>{{ movie.title}}</h2>
-                <h3>{{ movie.description}}</h3>
-                <img src="{{ movie.image.url}}">
-                {% if movie.url %}
-                    <a href="{{ movie.url }}"> Movie link</a>
-                {% endif %}
-            {% endfor %}
-        </p>
-        
+        <div class="container">
+            <form action="">
+                <div class="mb-3">
+                    <label for="searchMovie" class="form-label">
+                        Search for movie:
+                    </label>
+                    <input type="text" class="form-control" name="searchMovie">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>    
+            <p>
+                <p>Searching for {{searchTerm}}</p>
+                {% for movie in movies %}
+                    <h2>{{ movie.title}}</h2>
+                    <h3>{{ movie.description}}</h3>
+                    <img src="{{ movie.image.url}}">
+                    {% if movie.url %}
+                        <a href="{{ movie.url }}"> Movie link</a>
+                    {% endif %}
+                {% endfor %}
+            </p>
+        </div>
         <script src="" async defer></script>
     </body>
 </html>
